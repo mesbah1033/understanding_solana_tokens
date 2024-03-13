@@ -1,7 +1,7 @@
 # SolDev - MODULE 3 
 ## Write data to the network
 
-### Answer the following questions:
+### CHALLENGE - Answer the following questions:
 > 1. How much SOL did the transfer take? What is this in USD? 
 >> Ans. USD 0.02706751599933938 and 0.0001795999999956166 SOL
 >> Calculated using the following function in transfer.ts line 78
