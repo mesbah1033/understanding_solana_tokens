@@ -4,7 +4,7 @@
 // extracting payer (our) ADDRESS
 
 
-// create INSTRUCTION
+// create INSTRUCTION - will need system.transfer to transfer funds
 
 
 // create TRANSACTION
