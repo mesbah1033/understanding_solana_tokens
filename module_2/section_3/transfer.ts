@@ -37,7 +37,7 @@ console.log(
 );
 
 
-// TRANSTACION function to send money
+// TRANSACTION function to send money
 const transaction = new Transaction();
 const LAMPORTS_TO_SEND = 50000;
 const sendSolInstruction = SystemProgram.transfer({
