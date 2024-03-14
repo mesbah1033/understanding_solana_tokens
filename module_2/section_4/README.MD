@@ -9,7 +9,7 @@ WIP
 2. [Solution link](https://github.com/Unboxed-Software/solana-ping-client) provided leads to code that is covered in the lab and NOT IN THE CHALLENGE. Hence, making this NOT a solution!
 
 ### NOTE TO SELF
-1. "When working with non-native programs" what does mean? On-Chain programs vs Reading/Writing to the network directly.
+1. "When working with non-native programs" what does it mean? On-Chain programs vs Reading/Writing to the network directly.
 2. What is the lab program truly doing? Is just sending a "transaction" with some "instruction" qualify as an ping/interaction?
     
     **Answer:** Yes, as the web3.Transaction() OR web3.TransactionInstruction() constructors create "transactions" which is how everything interacts in Solana Blockchain. [Reference](https://solana.com/docs/clients/javascript-reference#transaction)
