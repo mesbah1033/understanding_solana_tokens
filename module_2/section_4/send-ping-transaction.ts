@@ -30,15 +30,11 @@ console.log("current account balance: " + currentBalanceInSOL + " SOL and " + cu
 // setting up addresses that our script will interact with
 const PING_PROGRAM_ADDRESS = new web3.PublicKey('ChT1B39WKLS8qUrkLvFDXMhEJ4F1XZzwUNHUt4AU9aVa')
 const PING_PROGRAM_DATA_ADDRESS =  new web3.PublicKey('Ah9K7dQ8EHaZqcAsgBW8w37yN2eAy3koFmUn4x3CJtod')
-// const transaction = new web3.Transaction()
-// const programId = new web3.PublicKey(PING_PROGRAM_ADDRESS)
-// const pingProgramDataId = new web3.PublicKey(PING_PROGRAM_DATA_ADDRESS)
-
-
-const transaction = new web3.Transaction()
 const programId = new web3.PublicKey(PING_PROGRAM_ADDRESS)
 const pingProgramDataId = new web3.PublicKey(PING_PROGRAM_DATA_ADDRESS)
 
+
+// creating the instruction object 
 const instruction = new web3.TransactionInstruction({
   keys: [
     {
@@ -50,3 +46,23 @@ const instruction = new web3.TransactionInstruction({
   programId
 })
 
+
+// creating the instruction object 
+const transaction = new web3.Transaction()
+
+
+// running the script - added INSTRUCTION into a TRANSACTION and sent it using...
+transaction.add(instruction)
+
+
+// ...sendAndConfirmTransaction function - this function returns a Signature string after a succesful run
+const signature = await web3.sendAndConfirmTransaction(
+  connection,
+  transaction,
+  [payer]
+)
+
+
+// logging outputs
+console.log(`✅ Transaction completed! Signature is ${signature}`)
+console.log(`You can view your transaction on the Solana Explorer at:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
