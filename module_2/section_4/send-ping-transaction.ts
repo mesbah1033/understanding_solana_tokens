@@ -18,7 +18,7 @@ const currentBalanceInSOL = currentBalanceInLamports / LAMPORTS_PER_SOL;
 console.log("current account balance: " + currentBalanceInSOL + " SOL and " + currentBalanceInLamports + " LAMPS")
 
 
-// #### only use the following if balance is low
+// #### only use the following if balance is low - its an if function but I don't want to run another await func
 // const newBalance = await airdropIfRequired(
 //     connection,
 //     payer.publicKey,
@@ -34,7 +34,7 @@ const programId = new web3.PublicKey(PING_PROGRAM_ADDRESS)
 const pingProgramDataId = new web3.PublicKey(PING_PROGRAM_DATA_ADDRESS)
 
 
-// creating the instruction object 
+// creating the INSTRUCTION object - we need to provide the program data address and program address here
 const instruction = new web3.TransactionInstruction({
   keys: [
     {
@@ -47,7 +47,7 @@ const instruction = new web3.TransactionInstruction({
 })
 
 
-// creating the instruction object 
+// creating the TRANSACTION object - this is where the instructions go into
 const transaction = new web3.Transaction()
 
 
