@@ -9,13 +9,15 @@ import * as walletAdapterWallets from "@solana/wallet-adapter-wallets";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const endpoint = web3.clusterApiUrl("devnet");
-    // not using wallets variable as we are going to be using the default value for wallets parameter 
-    const wallets = useMemo(() => [], []);
+  const endpoint = web3.clusterApiUrl("devnet");
   
-    return (
+// Issue: wallets needs to have the following, code provided in tutorial page is INCORRECT
+// found correct constructor from source code in github repo
+  const wallets = [new walletAdapterWallets.PhantomWalletAdapter()]
+
+  return (
     <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={[]}>
+      <WalletProvider wallets={wallets}>
         <WalletModalProvider>{children}</WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
