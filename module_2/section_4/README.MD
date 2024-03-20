@@ -1,6 +1,9 @@
 # SolDev - MODULE 2 Section 4 
 ## Using custom onchain programs
 
+### How to run in terminal (once in the correct directory)
+npx esrun \[filename\] \[optional: input\]
+
 ### All the files explained
 WIP
 
